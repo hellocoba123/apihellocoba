@@ -88,11 +88,11 @@ function HelloCoBa(capso){
         let d = n2.substring(3, 1);
         if ((b == c) && (c == d))
         {
-            return a + b + "";
+            return a + b + "'";
         }
         if ((b == c))
         {
-            return a + b + "'";
+            return a + b + "";
         }
     }
     return '';
