@@ -14,8 +14,10 @@ app.get('/', (req, res) => {
 })
 
 app.get('/api/hello',cors(), async (req, res) => {
-        
+    let date=req.query.date;      
     var day=dateFormat(new Date(), "dd-mm-yyyy");
+    if(date)
+        day=date;
     var body = await getBody('http://ketqua.net/xo-so-truyen-thong.php?ngay='+day);
     let $ = cheerio.load(body);
             
