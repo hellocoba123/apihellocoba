@@ -2,6 +2,7 @@ const express = require('express');
 const cheerio = require('cheerio');
 const request = require('request');
 const dateFormat = require('dateformat');
+const cors = require('cors')
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -12,7 +13,7 @@ app.get('/', (req, res) => {
     res.send(`Listening on ${ PORT }`);
 })
 
-app.get('/api/hello', async (req, res) => {
+app.get('/api/hello',cors(), async (req, res) => {
         
     var day=dateFormat(new Date(), "dd-mm-yyyy");
     var body = await getBody('http://ketqua.net/xo-so-truyen-thong.php?ngay='+day);
